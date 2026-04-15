@@ -1,0 +1,24 @@
+name: Build Armbian Image for A20-OLinuXino-LIME2 board
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+    steps:
+      - uses: armbian/build@main
+        with:
+          armbian_token: ${{ secrets.GITHUB_TOKEN }}
+          armbian_board: lime2
+          armbian_release: trixie
+          armbian_target: build
+          armbian_ui: minimal
+          armbian_runner_clean: "yes"
+          armbian_release_title: A20-OLinuXino-LIME2
+          armbian_release_body: |
+            Armbian image for [A20-OLinuXino-LIME2](https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2/) board.
+            Build with [Armbian tools](https://github.com/armbian/build).
