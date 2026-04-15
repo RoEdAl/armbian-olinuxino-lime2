@@ -1,1 +1,0 @@
-export BOOTCONFIG="A20-OLinuXino-Lime2_defconfig"
